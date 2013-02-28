@@ -11,7 +11,7 @@ A quick group of MediaWiki/JavaScript tools.
 
 ###Thanks
 
-Thank you to [Ori Livneh](github.com/atdt) and [MZMcBride](github.com/mzmcbride) for helping to get me started.
+Thank you to [Ori Livneh](https://github.com/atdt) and [MZMcBride](https://github.com/mzmcbride) for helping to get me started.
 
 ###License
 
