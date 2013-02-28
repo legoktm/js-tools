@@ -10,6 +10,8 @@
 	This script very likely may contain bugs, use at your
 	own risk.
 
+	Released under the MIT License, see README.txt for details.
+
 */
 
 if ( mw.config.get('wgPageName').indexOf('Special:Contributions') >= 0 ) {
