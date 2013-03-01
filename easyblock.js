@@ -75,6 +75,7 @@ function block( isproxy ) {
 						reason: isproxy ? '{{blocked proxy}}: Spambot' : 'Spambot',
 						nocreate: '1',
 						anononly: '1',
+						autoblock: '1',
 						token: blocktoken
 					}).done(
 						function( data ) {
