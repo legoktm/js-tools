@@ -17,7 +17,7 @@ summaries = {
 }
 
 
-if ( mw.config.get('wgNamespaceNumber') == 3 ) {
+if ( mw.config.get('wgNamespaceNumber') === 3 ) {
 	var vandal = mw.util.addPortletLink( 'p-cactions', '#',
 		'uw-vandalism1', 'ca-uw-vand', 'uw-vandalism1'
 	);
