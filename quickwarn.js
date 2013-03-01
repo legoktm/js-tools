@@ -13,11 +13,12 @@
 
 summaries = {
 	'uw-vandalism1': 'Warning for vandalism',
-	'uw-link-removal1': 'Warning for removing links'
+	'uw-link-removal1': 'Warning for removing links',
+	'welcome':'Welcome to Wikidata!'
 }
 
 
-if ( mw.config.get('wgNamespaceNumber') === 3 ) {
+if ( mw.config.get('wgPageName').indexOf('Special:Contributions') >= 0 || mw.config.get('wgNamespaceNumber') === 3 ) {
 	var vandal = mw.util.addPortletLink( 'p-cactions', '#',
 		'uw-vandalism1', 'ca-uw-vand', 'uw-vandalism1'
 	);
@@ -38,15 +39,23 @@ $( linkrmv ).click( function () {
 
 function warn( template, summaries ) {
 	var api = new mw.Api();
+	var page;
+	if ( mw.config.get('wgNamespaceNumber') === 3 ) {
+		page = mw.config.get( 'wgPageName' );
+	} else {
+		page = mw.util.getParamValue('target') || mw.config.get('wgTitle').substr(14);
+		page = 'User talk:' + page;
+	}
 	api.post( {
 		action: 'edit',
-		title: mw.config.get( 'wgPageName' ),
-		appendtext: '\n{{subst:'+template+'}} ~~~~',
+		title: page,
+		appendtext: '\n{{subst:'+template+'}} ~~~ ~~~~~',
 		summary: summaries[template],
 		token: mw.user.tokens.get( 'editToken' )
 	}).done( 
 		function( data ) {
 			console.log(data); // for debugging
+			window.location = '/wiki/' + page; // reload the page?
 		}
 	);
 	

@@ -8,6 +8,7 @@ A quick group of MediaWiki/JavaScript tools.
 ###Scripts
 
 - ```easyblock.js``` - Adds quick spambot block tabs to Special:Contribution pages.
+- ```quickwarn.js``` - Lets a user quickly warn using predefined templates.
 
 ###Thanks
 
