@@ -49,7 +49,7 @@ function warn( template, summaries ) {
 	api.post( {
 		action: 'edit',
 		title: page,
-		appendtext: '\n{{subst:'+template+'}} ~~~ ~~~~~',
+		appendtext: '\n{{subst:'+template+'}} ~~'+'~~',
 		summary: summaries[template],
 		token: mw.user.tokens.get( 'editToken' )
 	}).done( 
